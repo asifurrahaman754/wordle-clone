@@ -1,0 +1,44 @@
+.board-container {
+  display: grid;
+  grid-template-columns: repeat(5, 8.5vh);
+  grid-template-rows: repeat(6, 8.5vh);
+  grid-gap: 0.35em;
+  margin: 0.5em 0em;
+}
+
+@media (max-height: 580px) {
+  .board-container {
+    grid-template-columns: repeat(5, 6vh);
+    grid-template-rows: repeat(6, 6vh);
+  }
+}
+
+.board-container .tile {
+  border: 2px solid hsl(214, 9%, 84%);
+  display: grid;
+  place-items: center;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.tile[data-state="present"] {
+  border-color: hsl(49, 51%, 57%);
+  background-color: hsl(49, 51%, 57%);
+  color: white;
+}
+.tile[data-state="absent"] {
+  border-color: hsl(200, 2%, 48%);
+  background-color: hsl(200, 2%, 48%);
+  color: white;
+}
+.tile[data-state="correct"] {
+  border-color: hsl(115, 29%, 53%);
+  background-color: hsl(115, 29%, 53%);
+  color: white;
+}
+.tile[data-state="active"] {
+  border-color: hsl(204, 2%, 54%);
+}

@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  font-size: clamp(0.5rem, 2.5vmin, 1.5rem);
+}
+
+.App-header {
+  display: flex;
+  width: 100%;
+  padding: 0 15px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d3d6da;
+}
+
+.App-header-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.App-header-logo {
+  font-family: "Alegreya", serif;
+  font-size: 37px;
+}
