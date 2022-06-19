@@ -1,15 +1,24 @@
-.board-container {
+:root {
+  --yellow: hsl(49, 51%, 57%);
+  --green: hsl(115, 29%, 53%);
+  --grey: hsl(200, 2%, 48%);
+}
+
+.board-container .row {
   display: grid;
   grid-template-columns: repeat(5, 8.5vh);
-  grid-template-rows: repeat(6, 8.5vh);
   grid-gap: 0.35em;
-  margin: 0.5em 0em;
+  grid-template-rows: repeat(1, 8.5vh);
+}
+
+.row:not(:last-child) {
+  margin-bottom: 0.35em;
 }
 
 @media (max-height: 580px) {
-  .board-container {
+  .board-container .row {
     grid-template-columns: repeat(5, 6vh);
-    grid-template-rows: repeat(6, 6vh);
+    grid-template-rows: repeat(1, 6vh);
   }
 }
 
@@ -25,20 +34,65 @@
 }
 
 .tile[data-state="present"] {
-  border-color: hsl(49, 51%, 57%);
-  background-color: hsl(49, 51%, 57%);
-  color: white;
+  --border-color: var(--yellow);
+  --background-color: var(--yellow);
+  animation: flip 0.5s ease forwards;
 }
 .tile[data-state="absent"] {
-  border-color: hsl(200, 2%, 48%);
-  background-color: hsl(200, 2%, 48%);
-  color: white;
+  --border-color: var(--grey);
+  --background-color: var(--grey);
+  animation: flip 0.5s ease forwards;
 }
 .tile[data-state="correct"] {
-  border-color: hsl(115, 29%, 53%);
-  background-color: hsl(115, 29%, 53%);
-  color: white;
+  --border-color: var(--green);
+  --background-color: var(--green);
+  animation: flip 0.5s ease forwards;
 }
 .tile[data-state="active"] {
   border-color: hsl(204, 2%, 54%);
+  animation: zoom 0.1s cubic-bezier(0.05, 1.19, 0.24, 0.97);
+}
+
+.row :not(.tile[data-state="active"]):nth-child(2) {
+  animation-delay: 0.4s;
+}
+.row :not(.tile[data-state="active"]):nth-child(3) {
+  animation-delay: 0.6s;
+}
+.row :not(.tile[data-state="active"]):nth-child(4) {
+  animation-delay: 0.9s;
+}
+.row :not(.tile[data-state="active"]):nth-child(5) {
+  animation-delay: 1.2s;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+  45% {
+    transform: rotateX(90deg);
+  }
+  55% {
+    transform: rotateX(90deg);
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+  }
+  100% {
+    transform: rotateX(0);
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: #fff;
+  }
 }
