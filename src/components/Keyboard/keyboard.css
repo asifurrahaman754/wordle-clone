@@ -8,6 +8,7 @@
   grid-auto-rows: 58px;
   grid-gap: 0.5em 0.25em;
   justify-content: center;
+  font-size: clamp(0.8rem, 2.5vmin, 1.5rem);
 }
 
 .key {
@@ -16,7 +17,6 @@
   display: grid;
   border-radius: 4px;
   border: none;
-  text-transform: uppercase;
   user-select: none;
   cursor: pointer;
   font-weight: bold;
@@ -30,6 +30,10 @@
 
 .key.large {
   grid-column: span 3;
+}
+
+.key.btn-disabled {
+  pointer-events: none;
 }
 
 .key:hover,

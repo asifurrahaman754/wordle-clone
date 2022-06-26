@@ -1,0 +1,19 @@
+.App-header {
+  display: flex;
+  width: 100%;
+  padding: 0 15px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d3d6da;
+}
+
+.App-header-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.App-header-logo {
+  font-family: "Alegreya", serif;
+  font-size: 37px;
+}

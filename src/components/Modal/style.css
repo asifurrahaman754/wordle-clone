@@ -1,0 +1,26 @@
+.modal-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.281);
+  display: grid;
+  place-items: center;
+}
+
+.modal-wrapper {
+  background-color: white;
+  text-align: center;
+  margin: 0 15px;
+  padding: 2rem 1rem;
+}
+
+.modal-wrapper .text {
+  font-weight: 400;
+}
+
+.replay {
+  margin-top: 1rem;
+  padding: 8px 15px;
+  cursor: pointer;
+}
