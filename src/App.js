@@ -26,7 +26,6 @@ function App() {
       .then((data) => {
         const solution = encryptSolution(data[0]);
         //save the encrypted solution in the localstorage
-        console.log(data[0]);
         localStorage.setItem("encrypted-solution", solution);
         return "success";
       })
